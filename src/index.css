@@ -1,0 +1,112 @@
+@import "tailwindcss";
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
+
+@font-face {
+  font-family: "StarWars";
+  src: url("/src/assets/Fonts/star_jedi/starjedi/Starjhol.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "StarWarsOutline";
+  src: url("/src/assets/Fonts/star_jedi/starjout/Starjout.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@theme {
+  --font-starwars: "StarWars", sans-serif;
+  --font-starwars-outline: "StarWarsOutline", sans-serif;
+  --font-roboto: "Roboto", system-ui, sans-serif;
+}
+
+@layer utilities {
+  .font-starwars {
+    font-family: var(--font-starwars);
+  }
+  .font-starwars-outline {
+    font-family: var(--font-starwars-outline);
+  }
+
+  .sw-title {
+    animation: sw-title-reveal 7s ease-out forwards;
+    transform-origin: center;
+  }
+
+  .font-roboto {
+    font-family: var(--font-roboto);
+  }
+
+  /* Subtitle fade-in container */
+  .sw-subtitle {
+    opacity: 0;
+    animation: sw-subtitle-fade 2s ease-out forwards;
+    animation-delay: 0.8s;
+    text-align: center;
+    white-space: nowrap;
+  }
+
+  
+
+  /* Individual letter spin-in */
+  .sw-letter {
+    display: inline-block;
+    opacity: 0;
+    transform: rotateX(-180deg);
+    animation: sw-letter-spin 5s ease-out forwards;
+    animation-delay: 0.9s;
+  }
+}
+
+@keyframes sw-title-reveal {
+  0% {
+    opacity: 0;
+    transform: scale(1.15);
+  }
+
+  12% {
+    opacity: 1;
+    transform: scale(1.15);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes sw-subtitle-fade {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes sw-letter-spin {
+  from {
+    opacity: 0;
+    transform: rotateY(-90deg) translateY(0.25em);
+  }
+  to {
+    opacity: 1;
+    transform: rotateY(0deg) translateY(0);
+  }
+}
+
+
+:root {
+  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

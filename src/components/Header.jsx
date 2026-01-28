@@ -4,7 +4,7 @@ function Header () {
         <h1 
         className="
         font-starwars
-        text-yellow-400
+        text-yellow-400 dark:text-[#fd1b0a]
         text-6xl
         sm:text-5xl
         md:text-8xl
@@ -22,11 +22,11 @@ function Header () {
         mt-4 
         text-4xl
         sw-subtitle
-        text-slate-300
+        text-slate-500 dark:text-slate-300
         "
         >
             {"archive of the galaxy".split("").map((char, i) => (
-            <span key={i} className="sw-letter">
+            <span key={i} className="sw-letter items-center">
                 {char === " " ? "\u00A0" : char}
             </span>
             ))}

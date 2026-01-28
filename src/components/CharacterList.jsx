@@ -61,8 +61,18 @@ export default function CharacterList() {
           return (
             <div
               key={char.name}
-              className="bg-gray-800 rounded-xl shadow-lg overflow-hidden hover:scale-115 transition-transform duration-200"
+              className="
+              rounded-xl overflow-hidden
+              bg-white/70 dark:bg-zinc-900/80
+              shadow-md
+              hover:scale-110 transition-transform duration-200
+              hover:-translate-y-1
+              hover:shadow-xl
+              hover:ring-5 hover:ring-amber-600/20
+              dark:hover:ring-[#fd1b0a]/25
+              "
             >
+
               {/* Image Section */}
               <div className="w-full h-64 bg-gray-700">
                 <img
@@ -77,13 +87,27 @@ export default function CharacterList() {
               </div>
 
               {/* Info Section */}
-              <div className="p-4 text-white">
-                <h2 className="text-xl font-semibold text-blue-400 mb-1">
+              <div className="p-4">
+                <h2
+                className="
+                  font-cinzel
+                  text-2xl
+                  font-bold
+                  tracking-wide
+                  text-[#9a6a16] dark:text-[#fd1b0a]
+                  mb-2
+                "
+              >
+
                   {char.name}
                 </h2>
-                <p className="text-sm text-gray-300">Height: {char.height} cm</p>
-                <p className="text-sm text-gray-300">Mass: {char.mass} kg</p>
-                <p className="text-sm text-gray-300">
+                <p className="text-sm font-mono font-bold text-slate-700/80 dark:text-slate-400">
+                  Height: {char.height} cm
+                </p>
+                <p className="text-sm font-mono font-bold text-slate-700/80 dark:text-slate-400 leading-none">
+                  Mass: {char.mass} kg
+                </p>
+                <p className="text-sm font-mono font-bold text-slate-700/80 dark:text-slate-400">
                   Birth Year: {char.birth_year}
                 </p>
               </div>

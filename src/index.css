@@ -1,5 +1,37 @@
 @import "tailwindcss";
-@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
+
+@import url('https://fonts.googleapis.com/css2?family=Barriecito&display=swap');
+
+@custom-variant dark (&:where(.dark, .dark *) );
+
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url("/src/assets/Fonts/Roboto/Roboto-Variable.ttf") format("truetype");
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Cinzel";
+  src: url("/src/assets/Fonts/Cinzel/Cinzel-Variable.ttf") format("truetype");
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Monomaniac One";
+  src: url("/src/assets/Fonts/Monomaniac_One/MonomaniacOne-Regular.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
 
 @font-face {
   font-family: "StarWars";
@@ -21,24 +53,37 @@
   --font-starwars: "StarWars", sans-serif;
   --font-starwars-outline: "StarWarsOutline", sans-serif;
   --font-roboto: "Roboto", system-ui, sans-serif;
+  --font-barriecito: "Barriecito", cursive;
+  --font-monomaniac: "Monomaniac One", sans-serif;
+  --font-cinzel: "Cinzel", serif;
 }
 
 @layer utilities {
   .font-starwars {
     font-family: var(--font-starwars);
   }
+
   .font-starwars-outline {
     font-family: var(--font-starwars-outline);
-  }
-
-  .sw-title {
-    animation: sw-title-reveal 7s ease-out forwards;
-    transform-origin: center;
   }
 
   .font-roboto {
     font-family: var(--font-roboto);
   }
+
+  .font-cinzel {
+    font-family: 'Cinzel', serif;
+  }
+
+  .font-barriecito {
+    font-family: 'Barriecito', cursive;
+  }
+
+  .font-monomaniac {
+    font-family: 'Monomaniac One', sans-serif;
+  }
+}
+
 
   /* Subtitle fade-in container */
   .sw-subtitle {
@@ -59,7 +104,7 @@
     animation: sw-letter-spin 5s ease-out forwards;
     animation-delay: 0.9s;
   }
-}
+
 
 @keyframes sw-title-reveal {
   0% {
@@ -132,3 +177,4 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
